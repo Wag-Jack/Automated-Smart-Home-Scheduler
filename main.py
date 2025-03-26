@@ -1,7 +1,10 @@
 from openai import OpenAI
 
+with open('api-key.txt', 'r') as key_file:
+  key = key_file.read()
+
 client = OpenAI(
-  api_key="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"
+  api_key=key
 )
 
 completion = client.chat.completions.create(

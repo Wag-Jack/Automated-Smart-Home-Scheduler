@@ -1,4 +1,7 @@
 homeassistant
 kagglehub
+langchain
+langchain-openai
 openai
+python-dotenv
 requests

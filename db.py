@@ -22,7 +22,8 @@ def initialize_table():
     EVENTS = '''CREATE TABLE IF NOT EXISTS Events (
                 Event_ID SERIAL PRIMARY KEY,
                 Event_Name VARCHAR(255) NOT NULL,
-                Time TIME NOT NULL
+                Time_ID INT NOT NULL,
+                Sensor_Used VARCHAR(255)
             );'''
 
     #Create AGENT_COMMANDS table
@@ -76,7 +77,7 @@ def add_table(sens):
             add = input('(Date_ID, Month, Day, Year, Hour, Minute, Second): ')
             name = 'Date'
         case 2:
-            add = input('(Event_ID, Event_Name, Time): ')
+            add = input('(Event_ID, Event_Name, Time, Sensor_Used): ')
             name = 'Events'
         case 3:
             add = input('(Command_ID, Event_ID, Command): ')

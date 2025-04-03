@@ -5,3 +5,7 @@ langchain-openai
 openai
 python-dotenv
 requests
+torch
+pandas
+scikit-learn
+numpy

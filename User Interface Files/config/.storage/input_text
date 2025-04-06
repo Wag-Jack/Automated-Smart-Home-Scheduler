@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_text",
+  "data": {
+    "items": [
+      {
+        "id": "selected_schedule_date",
+        "name": "selected_schedule_date",
+        "max": 100,
+        "mode": "text",
+        "min": 0
+      }
+    ]
+  }
+}

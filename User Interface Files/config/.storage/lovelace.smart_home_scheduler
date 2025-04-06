@@ -1,0 +1,457 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.smart_home_scheduler",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Home",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Calendar",
+                  "heading_style": "title",
+                  "icon": "mdi:calendar"
+                },
+                {
+                  "type": "custom:layout-card",
+                  "gridrows": 4,
+                  "gridcols": 7,
+                  "max_cols": 7,
+                  "cards": [
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "name": "March 1",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-01"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 2",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-02"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 3",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-03"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 4",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-04"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 5",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-05"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 6",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-06"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 7",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-07"
+                        }
+                      }
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "name": "March 8",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "perform-action",
+                        "data": {
+                          "date": "2025-03-08"
+                        },
+                        "perform_action": "script.set_selected_date",
+                        "target": {}
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 9",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-09"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 10",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-10"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 11",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-11"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 12",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-12"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 13",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-13"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 14",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-14"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 15",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-15"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 16",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-16"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 17",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-17"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 18",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-18"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 19",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-19"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 20",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-20"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 21",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-21"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 22",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-22"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 23",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-23"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 24",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-24"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 25",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-25"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 26",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-26"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 27",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-27"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "name": "March 28",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "2025-03-28"
+                        }
+                      }
+                    }
+                  ],
+                  "style": "ha-card {\n  width: 100%;\n  margin: 10px;\n  font-size: 20px;\n  padding: 5px;\n  color: blue;\n}\n .layout-card .layout-grid {\n      display: grid;\n      grid-template-columns: repeat(7, 1fr);  # Update this value to match the number of columns you want\n      grid-gap: 10px;\n    }\n",
+                  "layout_type": "masonry",
+                  "layout": {
+                    "width": 200,
+                    "max_cols": 7
+                  },
+                  "grid_options": {
+                    "columns": "full"
+                  }
+                }
+              ],
+              "column_span": 7
+            }
+          ]
+        },
+        {
+          "type": "sections",
+          "max_columns": 7,
+          "title": "Day View",
+          "path": "day-view",
+          "icon": "mdi:calendar-today",
+          "cards": [
+            {
+              "type": "entity",
+              "entity": "input_text.selected_schedule_date",
+              "name": "Selected Date"
+            }
+          ],
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "# 📅 {{ states('input_text.selected_schedule_date') }}\n"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "title": "Events for the Day",
+                  "content": "{% set events = states('sensor.schedule_events') | from_json %} **Today's Schedule:**{{ '\\n' }} {% for event in events %} - {{ event.time }} — {{ event.name }}{{ '\\n' }} {% endfor %}\n"
+                },
+                {
+                  "type": "button",
+                  "name": "Edit Schedule",
+                  "icon": "mdi:pencil",
+                  "tap_action": {
+                    "action": "fire-dom-event",
+                    "browser_mod": {
+                      "service": "browser_mod.popup",
+                      "data": {
+                        "title": "Edit Schedule",
+                        "content": {
+                          "type": "entities",
+                          "entities": [
+                            {
+                              "entity": "input_text.selected_schedule_date",
+                              "name": "Selected Date"
+                            },
+                            {
+                              "entity": "input_text.event_name",
+                              "name": "Event Name"
+                            },
+                            {
+                              "entity": "input_datetime.event_time",
+                              "name": "Device"
+                            },
+                            {
+                              "entity": "input_text.event_description",
+                              "name": "Description"
+                            }
+                          ],
+                          "style": "ha-card {\n  width: 200%;\n  margin: 10px;\n  font-size: 20px;\n  padding: 5px;\n  color: blue;\n}\n"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

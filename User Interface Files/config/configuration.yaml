@@ -1,0 +1,23 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+hacs:
+
+template:
+  - sensor:
+      - name: "Schedule Events"
+        state: >
+          [{"name": "Wake Up", "time": "08:00"},
+           {"name": "Breakfast", "time": "08:30"},
+           {"name": "Therapy Session", "time": "10:00"},
+           {"name": "Lunch", "time": "12:00"},
+           {"name": "Outdoor Play", "time": "15:00"}]

@@ -1,58 +1,33 @@
 import os
 from dotenv import load_dotenv
 
-from langchain.chat_models import init_chat_model
-
-from langchain_community.utilities import SQLDatabase
-from langchain_community.agent_toolkits import SQLDatabaseToolkit
-
+from langchain_openai import ChatOpenAI  # ✅ Corrected import
 from langchain_core.messages import HumanMessage
-from langchain_core.tools import tool
-
-from langgraph.checkpoint.memory import MemorySaver
 from langgraph.prebuilt import create_react_agent
 
-# Retrieve OpenAI API key from .env file
+# Load the API key from .env file
 load_dotenv()
-key = os.getenv('OPENAI_API_KEY')
+api_key = os.getenv("OPENAI_API_KEY")
 
-#Define tools later for use with Home Assistant / SQLite
+if not api_key:
+    raise ValueError("Missing OPENAI_API_KEY in your environment variables.")
+
+# Initialize model (use model name 'gpt-4o' or 'gpt-4', etc.)
+model = ChatOpenAI(model="gpt-4o", api_key=api_key)
+
+# Tools can be added later (e.g., smart home control tools)
 tools = []
 
-# Model configuration
-model = init_chat_model("gpt-4o-mini", model_provider="openai")
+# Create your agent
+scheduler_agent = create_react_agent(model=model, tools=tools)
 
-# Create agent from configured model
-scheduler_agent = create_react_agent(model, tools)
-
-# Send initial intro message using scheduler agent, showing each token in execution
-i = open('introduction.txt', 'r')
-intro = i.read()
-
-for step, metadata in scheduler_agent.stream(
-    {"messages": [HumanMessage(content=intro)]},
-    stream_mode="messages"
-):
-    if metadata['langgraph_node'] == 'agent' and (text := step.text()):
-        print(text, end='|')
-
-#TODO: SQLite interaction
-
-# Below creates an agent that remembers its state, will come back to this in integration
-"""
-def send_query(agent, config):
-    query = input('What would you like the scheduler agent to do? | ')
-   
-    for chunk in agent.stream(
-        {"messages": [HumanMessage(content=query)]}, config
-    ):
-        print(chunk)
-        print('---')
-"""
-        
-"""
-memory = MemorySaver()
-scheduler_agent = create_react_agent(model, tools, checkpointer=memory)"
-
-config = {"configurable": {"thread_id": "cis489"}}
-"""
+# Optional interactive mode for direct testing
+if __name__ == "__main__":
+    print("Smart Home Scheduler Agent is running...\n")
+    while True:
+        user_input = input("🧠 > ")
+        if user_input.lower() in ["exit", "quit"]:
+            break
+        for step, metadata in scheduler_agent.stream({"messages": [HumanMessage(content=user_input)]}, stream_mode="messages"):
+            if metadata['langgraph_node'] == 'agent' and (text := step.text()):
+                print(text, end='')

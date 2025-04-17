@@ -1,4 +1,3 @@
-
 # Loads default set of integrations. Do not remove.
 default_config:
 
@@ -12,12 +11,17 @@ scene: !include scenes.yaml
 
 hacs:
 
+
+shell_command:
+    fetch_schedule: "python3 /config/fetch_schedule.py {{ states('input_text.selected_schedule_date') }}"
+
+input_text:
+    schedule_data:
+        name: Schedule Data
+        max: 10000
+        
 template:
-  - sensor:
-      - name: "Schedule Events"
-        state: >
-          [{"name": "Wake Up", "time": "08:00"},
-           {"name": "Breakfast", "time": "08:30"},
-           {"name": "Therapy Session", "time": "10:00"},
-           {"name": "Lunch", "time": "12:00"},
-           {"name": "Outdoor Play", "time": "15:00"}]
+    - sensor:
+        - name: "current_date"
+          state: "{{ now().date() }}"
+

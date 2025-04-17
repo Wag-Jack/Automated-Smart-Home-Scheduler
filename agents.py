@@ -1,58 +1,106 @@
+import google.generativeai as genai
+import pandas as pd
+import paho.mqtt.client as mqtt
+import io
 import os
-from dotenv import load_dotenv
+import time
 
-from langchain.chat_models import init_chat_model
+genai.configure(api_key="INSERT KEY HERE")
+model = genai.GenerativeModel("gemini-2.0-flash-lite")
 
-from langchain_community.utilities import SQLDatabase
-from langchain_community.agent_toolkits import SQLDatabaseToolkit
+#Broker attributes
+sub_topic = 'scheduler/initial'
+pub_topic = 'scheduler/final'
+broker = 'mqtt_broker'
+port = 1883
+keepalive = 0
 
-from langchain_core.messages import HumanMessage
-from langchain_core.tools import tool
+def llm_agent(prompt: str):
+    response = model.generate_content(prompt)
+    return response.text
 
-from langgraph.checkpoint.memory import MemorySaver
-from langgraph.prebuilt import create_react_agent
+def load_schedule(filepath: str) -> pd.DataFrame:
+    return pd.read_csv(filepath)
 
-# Retrieve OpenAI API key from .env file
-load_dotenv()
-key = os.getenv('OPENAI_API_KEY')
+def summarize_schedule(df: pd.DataFrame) -> str:
+    summary = "".join([
+        f"At {row['hour']}:00, activity is {row['predicted_activity']}\n"
+        for _, row in df.iterrows()
+    ])
+    return summary
 
-#Define tools later for use with Home Assistant / SQLite
-tools = []
+def refine_schedule(file_name):
+    #"predicted_schedule.csv"
 
-# Model configuration
-model = init_chat_model("gpt-4o-mini", model_provider="openai")
+    schedule_df = load_schedule(file_name)
+    schedule_summary = summarize_schedule(schedule_df)
 
-# Create agent from configured model
-scheduler_agent = create_react_agent(model, tools)
+    prompt = (
+        "Given the following activity schedule,\
+              suggest a weekly schedule for when to \
+            activate and deactivate a temperature\
+                  sensor for Home Assitant. No explanation needed.\n\n"
+        + schedule_summary
+    )
 
-# Send initial intro message using scheduler agent, showing each token in execution
-i = open('introduction.txt', 'r')
-intro = i.read()
+    response = llm_agent(prompt)
+    print("Sensor Schedule:\n", response)
 
-for step, metadata in scheduler_agent.stream(
-    {"messages": [HumanMessage(content=intro)]},
-    stream_mode="messages"
-):
-    if metadata['langgraph_node'] == 'agent' and (text := step.text()):
-        print(text, end='|')
+def process_message(msg):
+    csv_payload = msg.payload.decode('utf-8')
+    f = io.StringIO(csv_payload)
+    refine_schedule(f)
 
-#TODO: SQLite interaction
+def publish_schedule(client):
+    if not os.path.isfile('predicted_schedule.csv'):
+        print(f'Refined schedule was not saved to directory, please examine.')
+        return
+    
+    with open('predicted_schedule.csv', 'rb') as f:
+        schedule_data = f.read()
 
-# Below creates an agent that remembers its state, will come back to this in integration
-"""
-def send_query(agent, config):
-    query = input('What would you like the scheduler agent to do? | ')
-   
-    for chunk in agent.stream(
-        {"messages": [HumanMessage(content=query)]}, config
-    ):
-        print(chunk)
-        print('---')
-"""
-        
-"""
-memory = MemorySaver()
-scheduler_agent = create_react_agent(model, tools, checkpointer=memory)"
+    client.publish(sub_topic, schedule_data)
+    print('Finalized schedule sent to Home Assistant')
 
-config = {"configurable": {"thread_id": "cis489"}}
-"""
+#Callback messages for broker
+def on_connect(client, data, flags, rc):
+    if rc == 0:
+        print(f'Reasoning agent connected with result code {rc}')
+        client.subscribe(sub_topic)
+    else:
+        print(f'Failed to connect, result code {rc}')
+
+def on_disconnect(client, data, rc):
+    print(f'Reasoning agent disconnected with result code {rc}')
+
+def on_message(client, data, message):
+    print(f'Message received: {message.payload.decode} on topic {message.topic}')
+    process_message(message)
+
+    #Once message processed and schedule refined, publish it to Home Assistant
+    publish_schedule(client)
+
+#New MQTT client
+broker = mqtt.Client()
+
+#Callback functions
+broker.on_connect = on_connect
+broker.on_disconnect = on_disconnect
+broker.on_message = on_message
+
+#Loop to ensure docker container does not exit early / constant reboot
+while True:
+    try:
+        broker.connect(broker, port, keepalive)
+        broker.loop_start()
+
+        #Keeps main thread active
+        while True:
+            time.sleep(1)
+
+    except Exception as e:
+        print('Connection on reasoning agent interrupted, retrying')
+
+    finally:
+        broker.loop_stop()
+        broker.disconnect()

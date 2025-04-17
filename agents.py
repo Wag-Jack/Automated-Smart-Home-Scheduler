@@ -2,7 +2,7 @@ import google.generativeai as genai
 import pandas as pd
 import paho.mqtt.client as mqtt
 
-genai.configure(api_key="AIzaSyBXZkHQrw8gUi0gj-CcOvtpCqjgMVG6LKk")
+genai.configure(api_key="API-KEY-HERE")
 model = genai.GenerativeModel("gemini-2.0-flash-lite")
 
 MQTT_BROKER = "localhost"
@@ -34,11 +34,17 @@ if __name__ == "__main__":
     schedule_summary = summarize_schedule(schedule_df)
 
     prompt = (
-        "Given the following activity schedule,\
-              suggest a weekly schedule for when to \
-            activate and deactivate a temperature\
-                  sensor for Home Assitant. No explanation needed.\n\n"
-        + schedule_summary
+        "You are a smart home assistant. Based on the user's predicted activity schedule, "
+        "suggest a consistent weekly schedule for activating or deactivating a temperature sensor. Only provide went to activate and deactivate the sensor.\n\n"
+        "Each row in your response must include the following fields, comma-separated:\n"
+        "MONTH, DAY, YEAR, HOUR, MINUTE, SECOND, SENSOR, SENSOR_STATE\n"
+        "- Use the current year (2025) for all entries.\n"
+        "- Use MONTH=4 (April), and assign each DAY from 14 to 20 to represent Monday to Sunday.\n"
+        "- Use MINUTE=0 and SECOND=0.\n"
+        "- SENSOR must always be 'temperature sensor'.\n"
+        "- SENSOR_STATE must be either 'ON' or 'OFF'.\n"
+        "Only output actual schedule rows—do not include any explanation or formatting beyond the schedule.\n\n"
+        "Here is the predicted activity schedule:\n" + schedule_summary
     )
 
     response = llm_agent(prompt)

@@ -2,7 +2,7 @@ import google.generativeai as genai
 import pandas as pd
 import paho.mqtt.client as mqtt
 
-genai.configure(api_key="API-KEY-HERE")
+genai.configure(api_key="API_KEY_HERE")
 model = genai.GenerativeModel("gemini-2.0-flash-lite")
 
 MQTT_BROKER = "localhost"
@@ -48,5 +48,8 @@ if __name__ == "__main__":
     )
 
     response = llm_agent(prompt)
-    print("Sensor Schedule:\n", response)
+    
+    with open("gemini_sensor_schedule.txt", "w") as f:
+        f.write(response)
+
     publish_mqtt(response)

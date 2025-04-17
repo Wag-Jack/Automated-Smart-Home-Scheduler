@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.restore_state",
+  "data": [
+    {
+      "state": {"entity_id":"person.chandler_joynes","state":"unknown","attributes":{"editable":true,"id":"chandler_joynes","device_trackers":[],"user_id":"5a58e30c7a704c2e89b27b5d390afd8e","friendly_name":"Chandler-Joynes"},"last_changed":"2025-04-17T06:27:28.208222+00:00","last_reported":"2025-04-17T06:27:30.412472+00:00","last_updated":"2025-04-17T06:27:30.412472+00:00","context":{"id":"01JS16WPFCESB8KXA0TR5NJ841","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"update.home_assistant_supervisor_update","state":"off","attributes":{"auto_update":true,"display_precision":0,"installed_version":"2025.04.0","in_progress":false,"latest_version":"2025.04.0","release_summary":null,"release_url":"https://github.com/home-assistant/supervisor/releases/tag/2025.04.0","skipped_version":null,"title":"Home Assistant Supervisor","update_percentage":null,"entity_picture":"https://brands.home-assistant.io/hassio/icon.png","friendly_name":"Home Assistant Supervisor Update","supported_features":1},"last_changed":"2025-04-17T06:27:28.296623+00:00","last_reported":"2025-04-17T06:27:28.296623+00:00","last_updated":"2025-04-17T06:27:28.296623+00:00","context":{"id":"01JS16WMD88YXQQM1D5WNQYQAB","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"update.home_assistant_core_update","state":"on","attributes":{"auto_update":false,"display_precision":0,"installed_version":"2025.2.5","in_progress":false,"latest_version":"2025.4.2","release_summary":null,"release_url":"https://www.home-assistant.io/latest-release-notes/","skipped_version":null,"title":"Home Assistant Core","update_percentage":null,"entity_picture":"https://brands.home-assistant.io/homeassistant/icon.png","friendly_name":"Home Assistant Core Update","supported_features":11},"last_changed":"2025-04-17T06:27:28.297044+00:00","last_reported":"2025-04-17T06:27:28.297044+00:00","last_updated":"2025-04-17T06:27:28.297044+00:00","context":{"id":"01JS16WMD99KQTD0BZ8HMQC01S","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"update.file_editor_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"5.8.0","in_progress":false,"latest_version":"5.8.0","release_summary":"# Changelog\n\n## 5.8.0\n\n- Update base image to Alpine 3.19\n\n## 5.7.0\n\n- Use new location for accessing the Home Assistant configuration folder using `/homeassistant`\n- Add access to the new public configuration folders of add-ons\n- Upgrade to Alpine 3.18\n-","release_url":null,"skipped_version":null,"title":"File editor","update_percentage":null,"entity_picture":"/api/hassio/addons/core_configurator/icon","friendly_name":"File editor Update","supported_features":25},"last_changed":"2025-04-17T06:27:28.297166+00:00","last_reported":"2025-04-17T06:27:28.297166+00:00","last_updated":"2025-04-17T06:27:28.297166+00:00","context":{"id":"01JS16WMD9VGK7F399HXTEYWMZ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"update.terminal_ssh_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"9.16.0","in_progress":false,"latest_version":"9.16.0","release_summary":"# Changelog\n\n## 9.16.0\n\n- Upgrade ttyd to 1.7.7 (fixes copy to clipboard using shift and drag)\n\n## 9.15.0\n\n- Upgrade Home Assistant CLI to 4.36.0\n\n## 9.14.0\n\n- Upgrade Home Assistant CLI to 4.34.0\n\n## 9.13.0\n\n- Enable ha command completion for non-login s","release_url":null,"skipped_version":null,"title":"Terminal & SSH","update_percentage":null,"entity_picture":"/api/hassio/addons/core_ssh/icon","friendly_name":"Terminal & SSH Update","supported_features":25},"last_changed":"2025-04-17T06:27:28.297251+00:00","last_reported":"2025-04-17T06:27:28.297251+00:00","last_updated":"2025-04-17T06:27:28.297251+00:00","context":{"id":"01JS16WMD9RBWHXCVTEHD8RP3D","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"update.mosquitto_broker_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"6.5.0","in_progress":false,"latest_version":"6.5.0","release_summary":"# Changelog\n\n## 6.5.0\n\n- Update base image to Debian 12 (bookworm)\n- Update mosquitto to version 2.0.20\n- Update mosquitto-go-auth to version 2.1.0\n- Update libwebsockets to version 4.3.3\n\n## 6.4.1\n\n- Increase default max_queued_messages to 8192 to fix dr","release_url":null,"skipped_version":null,"title":"Mosquitto broker","update_percentage":null,"entity_picture":"/api/hassio/addons/core_mosquitto/icon","friendly_name":"Mosquitto broker Update","supported_features":25},"last_changed":"2025-04-17T06:27:28.297324+00:00","last_reported":"2025-04-17T06:27:28.297324+00:00","last_updated":"2025-04-17T06:27:28.297324+00:00","context":{"id":"01JS16WMD9KWH7P31PEBV8VX5G","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"update.samba_share_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"12.5.0","in_progress":false,"latest_version":"12.5.0","release_summary":"# Changelog\n\n## 12.5.0\n\n- Add the ability to enable and disable trying to become a local master browser on a subnet\n\n## 12.4.0\n\n- Add the ability to enable and disable specific shares, improving user control over folder access\n\n## 12.3.3\n\n- Enable Samba c","release_url":null,"skipped_version":null,"title":"Samba share","update_percentage":null,"entity_picture":"/api/hassio/addons/core_samba/icon","friendly_name":"Samba share Update","supported_features":25},"last_changed":"2025-04-17T06:27:28.297396+00:00","last_reported":"2025-04-17T06:27:28.297396+00:00","last_updated":"2025-04-17T06:27:28.297396+00:00","context":{"id":"01JS16WMD9WG5TK07MSPCGV8CH","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"update.advanced_ssh_web_terminal_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"20.0.2","in_progress":false,"latest_version":"20.0.2","release_summary":"## What’s changed\n\n## ⬆️ Dependency updates\n\n- ⬆️ Update alpine_3_21/bind-tools to v9.18.34-r0 @[renovate[bot]](https://github.com/apps/renovate) ([#858](https://github.com/hassio-addons/addon-ssh/pull/858))\n- ⬆️ Update alpine_3_21/mariadb-client to v11.4","release_url":null,"skipped_version":null,"title":"Advanced SSH & Web Terminal","update_percentage":null,"entity_picture":"/api/hassio/addons/a0d7b954_ssh/icon","friendly_name":"Advanced SSH & Web Terminal Update","supported_features":25},"last_changed":"2025-04-17T06:27:28.297460+00:00","last_reported":"2025-04-17T06:27:28.297460+00:00","last_updated":"2025-04-17T06:27:28.297460+00:00","context":{"id":"01JS16WMD9R55HSKVX8J9PHSS5","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"update.git_pull_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"8.0.1","in_progress":false,"latest_version":"8.0.1","release_summary":"# Changelog\n\n## 8.0.1\n- Fix bashio warn(ing) logger usage breaking deployment keys\n\n## 8.0.0\n- Refactor git_pull to use HA Api with bashio\n- Update base image to Alpine 3.21\n- Remove ha cli dependency\n\n\n## 7.14.1\n- Fix error where $HOME is not defined\n\n##","release_url":null,"skipped_version":null,"title":"Git pull","update_percentage":null,"entity_picture":"/api/hassio/addons/core_git_pull/icon","friendly_name":"Git pull Update","supported_features":25},"last_changed":"2025-04-17T06:27:28.297524+00:00","last_reported":"2025-04-17T06:27:28.297524+00:00","last_updated":"2025-04-17T06:27:28.297524+00:00","context":{"id":"01JS16WMD98A1TV9G3VQSZ781W","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"update.home_assistant_operating_system_update","state":"on","attributes":{"auto_update":false,"display_precision":0,"installed_version":"14.2","in_progress":false,"latest_version":"15.2","release_summary":null,"release_url":"https://github.com/home-assistant/operating-system/releases/tag/15.2","skipped_version":null,"title":"Home Assistant Operating System","update_percentage":null,"entity_picture":"https://brands.home-assistant.io/homeassistant/icon.png","friendly_name":"Home Assistant Operating System Update","supported_features":3},"last_changed":"2025-04-17T06:27:28.297749+00:00","last_reported":"2025-04-17T06:27:28.297749+00:00","last_updated":"2025-04-17T06:27:28.297749+00:00","context":{"id":"01JS16WMD91JHE4TRK8VMH2XH2","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant","supported_features":1},"last_changed":"2025-04-17T06:27:29.220200+00:00","last_reported":"2025-04-17T06:27:29.220200+00:00","last_updated":"2025-04-17T06:27:29.220200+00:00","context":{"id":"01JS16WNA4QQS7Y6M6CEKJ2Y3Q","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"script.set_selected_date","state":"off","attributes":{"last_triggered":"2025-04-17T01:10:38.471321+00:00","mode":"single","current":0,"friendly_name":"Set Selected Date with Reset"},"last_changed":"2025-04-17T06:27:29.235602+00:00","last_reported":"2025-04-17T06:27:29.235602+00:00","last_updated":"2025-04-17T06:27:29.235602+00:00","context":{"id":"01JS16WNAKFV54EX05JEE5YE79","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.input_boolean_show_edit_popup","state":"off","attributes":{"editable":true,"friendly_name":"input_boolean.show_edit_popup"},"last_changed":"2025-04-17T06:27:29.237104+00:00","last_reported":"2025-04-17T06:27:29.237104+00:00","last_updated":"2025-04-17T06:27:29.237104+00:00","context":{"id":"01JS16WNAN67936W31T18Q472D","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.input_boolean_force_navigate","state":"off","attributes":{"editable":true,"friendly_name":"input_boolean.force_navigate"},"last_changed":"2025-04-17T06:27:29.237197+00:00","last_reported":"2025-04-17T06:27:29.237197+00:00","last_updated":"2025-04-17T06:27:29.237197+00:00","context":{"id":"01JS16WNANZ8AKHB79K34M3MXC","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"input_text.schedule_data","state":"unknown","attributes":{"editable":false,"min":0,"max":10000,"pattern":null,"mode":"text","friendly_name":"Schedule Data"},"last_changed":"2025-04-17T06:27:29.789265+00:00","last_reported":"2025-04-17T06:27:29.789265+00:00","last_updated":"2025-04-17T06:27:29.789265+00:00","context":{"id":"01JS16WNVXGZ44XSSKV71S5G00","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"input_text.selected_schedule_date","state":"2025-04-23","attributes":{"editable":true,"min":0,"max":100,"pattern":null,"mode":"text","friendly_name":"selected_schedule_date"},"last_changed":"2025-04-17T06:27:29.790493+00:00","last_reported":"2025-04-17T06:27:29.790493+00:00","last_updated":"2025-04-17T06:27:29.790493+00:00","context":{"id":"01JS16WNVY7D14QE96K8JP81YB","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"tts.google_translate_en_com","state":"unknown","attributes":{"friendly_name":"Google Translate en com"},"last_changed":"2025-04-17T06:27:29.838455+00:00","last_reported":"2025-04-17T06:27:29.838455+00:00","last_updated":"2025-04-17T06:27:29.838455+00:00","context":{"id":"01JS16WNXE7A7P9PYTX9CNQZ5P","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.navigate_after_selecting_date","state":"on","attributes":{"last_triggered":"2025-04-17T01:10:39.651486+00:00","mode":"single","current":0,"friendly_name":"Navigate After Selecting Date"},"last_changed":"2025-04-17T06:27:29.864083+00:00","last_reported":"2025-04-17T06:27:29.864083+00:00","last_updated":"2025-04-17T06:27:29.864083+00:00","context":{"id":"01JS16WNY8EZYMXKHBGFAQQA72","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"update.hacs_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"2.0.5","in_progress":false,"latest_version":"2.0.5","release_summary":null,"release_url":"https://github.com/hacs/integration/releases/2.0.5","skipped_version":null,"title":null,"update_percentage":null,"entity_picture":"https://brands.home-assistant.io/_/hacs/icon.png","friendly_name":"HACS update","supported_features":23},"last_changed":"2025-04-17T06:27:29.867120+00:00","last_reported":"2025-04-17T06:27:29.867120+00:00","last_updated":"2025-04-17T06:27:29.867120+00:00","context":{"id":"01JS16WNYBX75XZ292Y3XP5S35","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"update.layout_card_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v2.4.5","in_progress":false,"latest_version":"v2.4.5","release_summary":null,"release_url":"https://github.com/thomasloven/lovelace-layout-card/releases/v2.4.5","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"layout-card update","supported_features":23},"last_changed":"2025-04-17T06:27:29.867254+00:00","last_reported":"2025-04-17T06:27:29.867254+00:00","last_updated":"2025-04-17T06:27:29.867254+00:00","context":{"id":"01JS16WNYBH6KCE5D3B0VG1M2W","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"update.card_mod_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v3.4.4","in_progress":false,"latest_version":"v3.4.4","release_summary":null,"release_url":"https://github.com/thomasloven/lovelace-card-mod/releases/v3.4.4","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"card-mod update","supported_features":23},"last_changed":"2025-04-17T06:27:29.867348+00:00","last_reported":"2025-04-17T06:27:29.867348+00:00","last_updated":"2025-04-17T06:27:29.867348+00:00","context":{"id":"01JS16WNYBPF52R4PANJ061J92","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    },
+    {
+      "state": {"entity_id":"update.browser_mod_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v2.3.3","in_progress":false,"latest_version":"v2.3.3","release_summary":null,"release_url":"https://github.com/thomasloven/hass-browser_mod/releases/v2.3.3","skipped_version":null,"title":null,"update_percentage":null,"entity_picture":"https://brands.home-assistant.io/_/browser_mod/icon.png","friendly_name":"browser_mod update","supported_features":23},"last_changed":"2025-04-17T06:27:29.867434+00:00","last_reported":"2025-04-17T06:27:29.867434+00:00","last_updated":"2025-04-17T06:27:29.867434+00:00","context":{"id":"01JS16WNYBQ5QW3PB53KVXSEK3","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-04-17T07:42:30.492164+00:00"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "repairs.issue_registry",
+  "data": {
+    "issues": [
+      {
+        "created": "2025-04-01T18:47:41.292650+00:00",
+        "dismissed_version": null,
+        "domain": "homeassistant",
+        "is_persistent": false,
+        "issue_id": "config_entry_only_hacs"
+      },
+      {
+        "created": "2025-04-03T05:09:15.770019+00:00",
+        "dismissed_version": null,
+        "domain": "automation",
+        "is_persistent": true,
+        "issue_id": "automation.navigate_after_selecting_date_service_not_found_browser_mod.open_url",
+        "breaks_in_ha_version": null,
+        "data": null,
+        "is_fixable": true,
+        "issue_domain": null,
+        "learn_more_url": null,
+        "severity": "error",
+        "translation_key": "service_not_found",
+        "translation_placeholders": {
+          "service": "browser_mod.open_url",
+          "entity_id": "automation.navigate_after_selecting_date",
+          "name": "Navigate After Selecting Date",
+          "edit": "/config/automation/edit/None"
+        }
+      },
+      {
+        "created": "2025-04-16T15:29:41.776512+00:00",
+        "dismissed_version": null,
+        "domain": "hassio",
+        "is_persistent": false,
+        "issue_id": "0de566634e1b489fb8d202fcb2d3152e"
+      },
+      {
+        "created": "2025-04-16T22:27:29.706255+00:00",
+        "dismissed_version": null,
+        "domain": "homeassistant",
+        "is_persistent": false,
+        "issue_id": "config_entry_reauth_hacs_01JQSAYKEARJXEAW856ZVDEFRF"
+      },
+      {
+        "created": "2025-04-17T04:37:06.838231+00:00",
+        "dismissed_version": null,
+        "domain": "hassio",
+        "is_persistent": false,
+        "issue_id": "1e5ae4b41def45d38d49858682482862"
+      }
+    ]
+  }
+}

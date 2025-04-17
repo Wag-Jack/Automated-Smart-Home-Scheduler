@@ -1,0 +1,1726 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "trace.saved_traces",
+  "data": {
+    "script.set_selected_date": [
+      {
+        "extended_dict": {
+          "last_step": "sequence/5",
+          "run_id": "4e97965f2b2fb97d86d7ef19dd788722",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-17T00:37:14.743588+00:00",
+            "finish": "2025-04-17T00:37:16.930732+00:00"
+          },
+          "domain": "script",
+          "item_id": "set_selected_date",
+          "trace": {
+            "sequence/0": [
+              {
+                "path": "sequence/0",
+                "timestamp": "2025-04-17T00:37:14.743812+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "script.set_selected_date",
+                    "state": "off",
+                    "attributes": {
+                      "last_triggered": "2025-04-17T00:37:12.266187+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Set Selected Date with Reset"
+                    },
+                    "last_changed": "2025-04-17T00:37:14.385161+00:00",
+                    "last_reported": "2025-04-17T00:37:14.385161+00:00",
+                    "last_updated": "2025-04-17T00:37:14.385161+00:00",
+                    "context": {
+                      "id": "01JS0JV8Y9JV5WPHVA2A3D4WSF",
+                      "parent_id": null,
+                      "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                    }
+                  },
+                  "date": "2025-04-16",
+                  "context": {
+                    "id": "01JS0JVBBQ3JWFAMM2T2GTDGZ6",
+                    "parent_id": null,
+                    "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "input_text",
+                    "service": "set_value",
+                    "service_data": {
+                      "value": "2025-04-16",
+                      "entity_id": [
+                        "input_text.selected_schedule_date"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "input_text.selected_schedule_date"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/1": [
+              {
+                "path": "sequence/1",
+                "timestamp": "2025-04-17T00:37:14.744213+00:00",
+                "result": {
+                  "params": {
+                    "domain": "shell_command",
+                    "service": "fetch_schedule",
+                    "service_data": {},
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/2": [
+              {
+                "path": "sequence/2",
+                "timestamp": "2025-04-17T00:37:14.868345+00:00",
+                "result": {
+                  "delay": 1.0,
+                  "done": true
+                }
+              }
+            ],
+            "sequence/3": [
+              {
+                "path": "sequence/3",
+                "timestamp": "2025-04-17T00:37:15.915821+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_boolean",
+                    "service": "turn_on",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "input_boolean.input_boolean_force_navigate"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/4": [
+              {
+                "path": "sequence/4",
+                "timestamp": "2025-04-17T00:37:15.916397+00:00",
+                "child_id": {
+                  "domain": "automation",
+                  "item_id": "None",
+                  "run_id": "65fe2c05c01dc9ae9d147a4dc986c44b"
+                },
+                "result": {
+                  "delay": 1.0,
+                  "done": true
+                }
+              }
+            ],
+            "sequence/5": [
+              {
+                "path": "sequence/5",
+                "timestamp": "2025-04-17T00:37:16.928609+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_boolean",
+                    "service": "turn_off",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "input_boolean.input_boolean_force_navigate"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Set Selected Date with Reset",
+            "sequence": [
+              {
+                "target": {
+                  "entity_id": "input_text.selected_schedule_date"
+                },
+                "data": {
+                  "value": "{{ date }}"
+                },
+                "action": "input_text.set_value"
+              },
+              {
+                "action": "shell_command.fetch_schedule"
+              },
+              {
+                "delay": "00:00:01"
+              },
+              {
+                "target": {
+                  "entity_id": "input_boolean.input_boolean_force_navigate"
+                },
+                "action": "input_boolean.turn_on"
+              },
+              {
+                "delay": "00:00:01"
+              },
+              {
+                "target": {
+                  "entity_id": "input_boolean.input_boolean_force_navigate"
+                },
+                "action": "input_boolean.turn_off"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JS0JVBBQ3JWFAMM2T2GTDGZ6",
+            "parent_id": null,
+            "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+          }
+        },
+        "short_dict": {
+          "last_step": "sequence/5",
+          "run_id": "4e97965f2b2fb97d86d7ef19dd788722",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-17T00:37:14.743588+00:00",
+            "finish": "2025-04-17T00:37:16.930732+00:00"
+          },
+          "domain": "script",
+          "item_id": "set_selected_date"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "sequence/5",
+          "run_id": "116dc779fd42d10bfd56e4db756f3817",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-17T00:47:28.245364+00:00",
+            "finish": "2025-04-17T00:47:30.410290+00:00"
+          },
+          "domain": "script",
+          "item_id": "set_selected_date",
+          "trace": {
+            "sequence/0": [
+              {
+                "path": "sequence/0",
+                "timestamp": "2025-04-17T00:47:28.245612+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "script.set_selected_date",
+                    "state": "off",
+                    "attributes": {
+                      "last_triggered": "2025-04-17T00:37:14.743679+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Set Selected Date with Reset"
+                    },
+                    "last_changed": "2025-04-17T00:37:16.930603+00:00",
+                    "last_reported": "2025-04-17T00:37:16.930603+00:00",
+                    "last_updated": "2025-04-17T00:37:16.930603+00:00",
+                    "context": {
+                      "id": "01JS0JVBBQ3JWFAMM2T2GTDGZ6",
+                      "parent_id": null,
+                      "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                    }
+                  },
+                  "date": "2025-04-18",
+                  "context": {
+                    "id": "01JS0KE2FNHN3E6C6VN6NXEVT6",
+                    "parent_id": null,
+                    "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "input_text",
+                    "service": "set_value",
+                    "service_data": {
+                      "value": "2025-04-18",
+                      "entity_id": [
+                        "input_text.selected_schedule_date"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "input_text.selected_schedule_date"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/1": [
+              {
+                "path": "sequence/1",
+                "timestamp": "2025-04-17T00:47:28.246464+00:00",
+                "result": {
+                  "params": {
+                    "domain": "shell_command",
+                    "service": "fetch_schedule",
+                    "service_data": {},
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/2": [
+              {
+                "path": "sequence/2",
+                "timestamp": "2025-04-17T00:47:28.380068+00:00",
+                "result": {
+                  "delay": 1.0,
+                  "done": true
+                }
+              }
+            ],
+            "sequence/3": [
+              {
+                "path": "sequence/3",
+                "timestamp": "2025-04-17T00:47:29.407162+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_boolean",
+                    "service": "turn_on",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "input_boolean.input_boolean_force_navigate"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/4": [
+              {
+                "path": "sequence/4",
+                "timestamp": "2025-04-17T00:47:29.407639+00:00",
+                "child_id": {
+                  "domain": "automation",
+                  "item_id": "None",
+                  "run_id": "2b5b049d2dc6212d7332a7dde14c6bbc"
+                },
+                "result": {
+                  "delay": 1.0,
+                  "done": true
+                }
+              }
+            ],
+            "sequence/5": [
+              {
+                "path": "sequence/5",
+                "timestamp": "2025-04-17T00:47:30.409641+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_boolean",
+                    "service": "turn_off",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "input_boolean.input_boolean_force_navigate"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Set Selected Date with Reset",
+            "sequence": [
+              {
+                "target": {
+                  "entity_id": "input_text.selected_schedule_date"
+                },
+                "data": {
+                  "value": "{{ date }}"
+                },
+                "action": "input_text.set_value"
+              },
+              {
+                "action": "shell_command.fetch_schedule"
+              },
+              {
+                "delay": "00:00:01"
+              },
+              {
+                "target": {
+                  "entity_id": "input_boolean.input_boolean_force_navigate"
+                },
+                "action": "input_boolean.turn_on"
+              },
+              {
+                "delay": "00:00:01"
+              },
+              {
+                "target": {
+                  "entity_id": "input_boolean.input_boolean_force_navigate"
+                },
+                "action": "input_boolean.turn_off"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JS0KE2FNHN3E6C6VN6NXEVT6",
+            "parent_id": null,
+            "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+          }
+        },
+        "short_dict": {
+          "last_step": "sequence/5",
+          "run_id": "116dc779fd42d10bfd56e4db756f3817",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-17T00:47:28.245364+00:00",
+            "finish": "2025-04-17T00:47:30.410290+00:00"
+          },
+          "domain": "script",
+          "item_id": "set_selected_date"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "sequence/5",
+          "run_id": "a5cee84e44e312c03caa148728eee3e5",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-17T01:10:14.968581+00:00",
+            "finish": "2025-04-17T01:10:17.356983+00:00"
+          },
+          "domain": "script",
+          "item_id": "set_selected_date",
+          "trace": {
+            "sequence/0": [
+              {
+                "path": "sequence/0",
+                "timestamp": "2025-04-17T01:10:14.968832+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "script.set_selected_date",
+                    "state": "off",
+                    "attributes": {
+                      "last_triggered": "2025-04-17T00:47:28.245469+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Set Selected Date with Reset"
+                    },
+                    "last_changed": "2025-04-17T00:47:30.410144+00:00",
+                    "last_reported": "2025-04-17T00:47:30.410144+00:00",
+                    "last_updated": "2025-04-17T00:47:30.410144+00:00",
+                    "context": {
+                      "id": "01JS0KE2FNHN3E6C6VN6NXEVT6",
+                      "parent_id": null,
+                      "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                    }
+                  },
+                  "date": "2025-05-05",
+                  "context": {
+                    "id": "01JS0MQS5RNP658CE380QPD0AH",
+                    "parent_id": null,
+                    "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "input_text",
+                    "service": "set_value",
+                    "service_data": {
+                      "value": "2025-05-05",
+                      "entity_id": [
+                        "input_text.selected_schedule_date"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "input_text.selected_schedule_date"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/1": [
+              {
+                "path": "sequence/1",
+                "timestamp": "2025-04-17T01:10:14.969278+00:00",
+                "result": {
+                  "params": {
+                    "domain": "shell_command",
+                    "service": "fetch_schedule",
+                    "service_data": {},
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/2": [
+              {
+                "path": "sequence/2",
+                "timestamp": "2025-04-17T01:10:15.119785+00:00",
+                "result": {
+                  "delay": 1.0,
+                  "done": true
+                }
+              }
+            ],
+            "sequence/3": [
+              {
+                "path": "sequence/3",
+                "timestamp": "2025-04-17T01:10:16.128988+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_boolean",
+                    "service": "turn_on",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "input_boolean.input_boolean_force_navigate"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/4": [
+              {
+                "path": "sequence/4",
+                "timestamp": "2025-04-17T01:10:16.129448+00:00",
+                "child_id": {
+                  "domain": "automation",
+                  "item_id": "None",
+                  "run_id": "160c174a61ed28414175cb46676fc90f"
+                },
+                "result": {
+                  "delay": 1.0,
+                  "done": true
+                }
+              }
+            ],
+            "sequence/5": [
+              {
+                "path": "sequence/5",
+                "timestamp": "2025-04-17T01:10:17.353784+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_boolean",
+                    "service": "turn_off",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "input_boolean.input_boolean_force_navigate"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Set Selected Date with Reset",
+            "sequence": [
+              {
+                "target": {
+                  "entity_id": "input_text.selected_schedule_date"
+                },
+                "data": {
+                  "value": "{{ date }}"
+                },
+                "action": "input_text.set_value"
+              },
+              {
+                "action": "shell_command.fetch_schedule"
+              },
+              {
+                "delay": "00:00:01"
+              },
+              {
+                "target": {
+                  "entity_id": "input_boolean.input_boolean_force_navigate"
+                },
+                "action": "input_boolean.turn_on"
+              },
+              {
+                "delay": "00:00:01"
+              },
+              {
+                "target": {
+                  "entity_id": "input_boolean.input_boolean_force_navigate"
+                },
+                "action": "input_boolean.turn_off"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JS0MQS5RNP658CE380QPD0AH",
+            "parent_id": null,
+            "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+          }
+        },
+        "short_dict": {
+          "last_step": "sequence/5",
+          "run_id": "a5cee84e44e312c03caa148728eee3e5",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-17T01:10:14.968581+00:00",
+            "finish": "2025-04-17T01:10:17.356983+00:00"
+          },
+          "domain": "script",
+          "item_id": "set_selected_date"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "sequence/5",
+          "run_id": "0938a83e4f3ad0823e29fc5aee666d96",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-17T01:10:31.781472+00:00",
+            "finish": "2025-04-17T01:10:33.958826+00:00"
+          },
+          "domain": "script",
+          "item_id": "set_selected_date",
+          "trace": {
+            "sequence/0": [
+              {
+                "path": "sequence/0",
+                "timestamp": "2025-04-17T01:10:31.781673+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "script.set_selected_date",
+                    "state": "off",
+                    "attributes": {
+                      "last_triggered": "2025-04-17T01:10:14.968677+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Set Selected Date with Reset"
+                    },
+                    "last_changed": "2025-04-17T01:10:17.354502+00:00",
+                    "last_reported": "2025-04-17T01:10:17.354502+00:00",
+                    "last_updated": "2025-04-17T01:10:17.354502+00:00",
+                    "context": {
+                      "id": "01JS0MQS5RNP658CE380QPD0AH",
+                      "parent_id": null,
+                      "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                    }
+                  },
+                  "date": "2025-04-29",
+                  "context": {
+                    "id": "01JS0MR9K5N2VKH65XP0P0EJ1R",
+                    "parent_id": null,
+                    "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "input_text",
+                    "service": "set_value",
+                    "service_data": {
+                      "value": "2025-04-29",
+                      "entity_id": [
+                        "input_text.selected_schedule_date"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "input_text.selected_schedule_date"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/1": [
+              {
+                "path": "sequence/1",
+                "timestamp": "2025-04-17T01:10:31.782224+00:00",
+                "result": {
+                  "params": {
+                    "domain": "shell_command",
+                    "service": "fetch_schedule",
+                    "service_data": {},
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/2": [
+              {
+                "path": "sequence/2",
+                "timestamp": "2025-04-17T01:10:31.903253+00:00",
+                "result": {
+                  "delay": 1.0,
+                  "done": true
+                }
+              }
+            ],
+            "sequence/3": [
+              {
+                "path": "sequence/3",
+                "timestamp": "2025-04-17T01:10:32.940693+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_boolean",
+                    "service": "turn_on",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "input_boolean.input_boolean_force_navigate"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/4": [
+              {
+                "path": "sequence/4",
+                "timestamp": "2025-04-17T01:10:32.941162+00:00",
+                "child_id": {
+                  "domain": "automation",
+                  "item_id": "None",
+                  "run_id": "f30ada6127bea52b93f9579b9278a5e6"
+                },
+                "result": {
+                  "delay": 1.0,
+                  "done": true
+                }
+              }
+            ],
+            "sequence/5": [
+              {
+                "path": "sequence/5",
+                "timestamp": "2025-04-17T01:10:33.957817+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_boolean",
+                    "service": "turn_off",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "input_boolean.input_boolean_force_navigate"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Set Selected Date with Reset",
+            "sequence": [
+              {
+                "target": {
+                  "entity_id": "input_text.selected_schedule_date"
+                },
+                "data": {
+                  "value": "{{ date }}"
+                },
+                "action": "input_text.set_value"
+              },
+              {
+                "action": "shell_command.fetch_schedule"
+              },
+              {
+                "delay": "00:00:01"
+              },
+              {
+                "target": {
+                  "entity_id": "input_boolean.input_boolean_force_navigate"
+                },
+                "action": "input_boolean.turn_on"
+              },
+              {
+                "delay": "00:00:01"
+              },
+              {
+                "target": {
+                  "entity_id": "input_boolean.input_boolean_force_navigate"
+                },
+                "action": "input_boolean.turn_off"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JS0MR9K5N2VKH65XP0P0EJ1R",
+            "parent_id": null,
+            "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+          }
+        },
+        "short_dict": {
+          "last_step": "sequence/5",
+          "run_id": "0938a83e4f3ad0823e29fc5aee666d96",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-17T01:10:31.781472+00:00",
+            "finish": "2025-04-17T01:10:33.958826+00:00"
+          },
+          "domain": "script",
+          "item_id": "set_selected_date"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "sequence/5",
+          "run_id": "20486e2ba9b36e83561c8408a31cc7ef",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-17T01:10:38.471244+00:00",
+            "finish": "2025-04-17T01:10:40.663942+00:00"
+          },
+          "domain": "script",
+          "item_id": "set_selected_date",
+          "trace": {
+            "sequence/0": [
+              {
+                "path": "sequence/0",
+                "timestamp": "2025-04-17T01:10:38.471444+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "script.set_selected_date",
+                    "state": "off",
+                    "attributes": {
+                      "last_triggered": "2025-04-17T01:10:31.781556+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Set Selected Date with Reset"
+                    },
+                    "last_changed": "2025-04-17T01:10:33.958582+00:00",
+                    "last_reported": "2025-04-17T01:10:33.958582+00:00",
+                    "last_updated": "2025-04-17T01:10:33.958582+00:00",
+                    "context": {
+                      "id": "01JS0MR9K5N2VKH65XP0P0EJ1R",
+                      "parent_id": null,
+                      "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                    }
+                  },
+                  "date": "2025-04-23",
+                  "context": {
+                    "id": "01JS0MRG47AD4RHS1YW0PS6TFG",
+                    "parent_id": null,
+                    "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "input_text",
+                    "service": "set_value",
+                    "service_data": {
+                      "value": "2025-04-23",
+                      "entity_id": [
+                        "input_text.selected_schedule_date"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "input_text.selected_schedule_date"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/1": [
+              {
+                "path": "sequence/1",
+                "timestamp": "2025-04-17T01:10:38.471808+00:00",
+                "result": {
+                  "params": {
+                    "domain": "shell_command",
+                    "service": "fetch_schedule",
+                    "service_data": {},
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/2": [
+              {
+                "path": "sequence/2",
+                "timestamp": "2025-04-17T01:10:38.637030+00:00",
+                "result": {
+                  "delay": 1.0,
+                  "done": true
+                }
+              }
+            ],
+            "sequence/3": [
+              {
+                "path": "sequence/3",
+                "timestamp": "2025-04-17T01:10:39.650069+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_boolean",
+                    "service": "turn_on",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "input_boolean.input_boolean_force_navigate"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/4": [
+              {
+                "path": "sequence/4",
+                "timestamp": "2025-04-17T01:10:39.650558+00:00",
+                "child_id": {
+                  "domain": "automation",
+                  "item_id": "None",
+                  "run_id": "426d7af1a622a9366d099845009522a9"
+                },
+                "result": {
+                  "delay": 1.0,
+                  "done": true
+                }
+              }
+            ],
+            "sequence/5": [
+              {
+                "path": "sequence/5",
+                "timestamp": "2025-04-17T01:10:40.662136+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_boolean",
+                    "service": "turn_off",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "input_boolean.input_boolean_force_navigate"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Set Selected Date with Reset",
+            "sequence": [
+              {
+                "target": {
+                  "entity_id": "input_text.selected_schedule_date"
+                },
+                "data": {
+                  "value": "{{ date }}"
+                },
+                "action": "input_text.set_value"
+              },
+              {
+                "action": "shell_command.fetch_schedule"
+              },
+              {
+                "delay": "00:00:01"
+              },
+              {
+                "target": {
+                  "entity_id": "input_boolean.input_boolean_force_navigate"
+                },
+                "action": "input_boolean.turn_on"
+              },
+              {
+                "delay": "00:00:01"
+              },
+              {
+                "target": {
+                  "entity_id": "input_boolean.input_boolean_force_navigate"
+                },
+                "action": "input_boolean.turn_off"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JS0MRG47AD4RHS1YW0PS6TFG",
+            "parent_id": null,
+            "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+          }
+        },
+        "short_dict": {
+          "last_step": "sequence/5",
+          "run_id": "20486e2ba9b36e83561c8408a31cc7ef",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-04-17T01:10:38.471244+00:00",
+            "finish": "2025-04-17T01:10:40.663942+00:00"
+          },
+          "domain": "script",
+          "item_id": "set_selected_date"
+        }
+      }
+    ],
+    "automation.None": [
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "65fe2c05c01dc9ae9d147a4dc986c44b",
+          "state": "running",
+          "script_execution": null,
+          "timestamp": {
+            "start": "2025-04-17T00:37:15.916640+00:00",
+            "finish": null
+          },
+          "domain": "automation",
+          "item_id": "None",
+          "trigger": "state of input_boolean.input_boolean_force_navigate",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-04-17T00:37:15.916858+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.navigate_after_selecting_date",
+                    "state": "on",
+                    "attributes": {
+                      "last_triggered": "2025-04-17T00:37:13.380878+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Navigate After Selecting Date"
+                    },
+                    "last_changed": "2025-04-17T00:28:32.606964+00:00",
+                    "last_reported": "2025-04-17T00:37:13.382674+00:00",
+                    "last_updated": "2025-04-17T00:37:13.382674+00:00",
+                    "context": {
+                      "id": "01JS0JVA1434QVHRJYJRHAW5SD",
+                      "parent_id": "01JS0JV8Y9JV5WPHVA2A3D4WSF",
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "input_boolean.input_boolean_force_navigate",
+                    "from_state": {
+                      "entity_id": "input_boolean.input_boolean_force_navigate",
+                      "state": "off",
+                      "attributes": {
+                        "editable": true,
+                        "friendly_name": "input_boolean.force_navigate"
+                      },
+                      "last_changed": "2025-04-17T00:37:14.385027+00:00",
+                      "last_reported": "2025-04-17T00:37:14.385027+00:00",
+                      "last_updated": "2025-04-17T00:37:14.385027+00:00",
+                      "context": {
+                        "id": "01JS0JV8Y9JV5WPHVA2A3D4WSF",
+                        "parent_id": null,
+                        "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "input_boolean.input_boolean_force_navigate",
+                      "state": "on",
+                      "attributes": {
+                        "editable": true,
+                        "friendly_name": "input_boolean.force_navigate"
+                      },
+                      "last_changed": "2025-04-17T00:37:15.916175+00:00",
+                      "last_reported": "2025-04-17T00:37:15.916175+00:00",
+                      "last_updated": "2025-04-17T00:37:15.916175+00:00",
+                      "context": {
+                        "id": "01JS0JVBBQ3JWFAMM2T2GTDGZ6",
+                        "parent_id": null,
+                        "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of input_boolean.input_boolean_force_navigate"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-04-17T00:37:15.916962+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JS0JVCGC5X821BKS00TC8Z73",
+                    "parent_id": "01JS0JVBBQ3JWFAMM2T2GTDGZ6",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "browser_mod",
+                    "service": "navigate",
+                    "service_data": {
+                      "path": "/smart-home-scheduler/day-view"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Navigate After Selecting Date",
+            "trigger": [
+              {
+                "platform": "state",
+                "entity_id": "input_boolean.input_boolean_force_navigate",
+                "to": "on"
+              }
+            ],
+            "action": [
+              {
+                "data": {
+                  "path": "/smart-home-scheduler/day-view"
+                },
+                "action": "browser_mod.navigate"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JS0JVCGC5X821BKS00TC8Z73",
+            "parent_id": "01JS0JVBBQ3JWFAMM2T2GTDGZ6",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "65fe2c05c01dc9ae9d147a4dc986c44b",
+          "state": "running",
+          "script_execution": null,
+          "timestamp": {
+            "start": "2025-04-17T00:37:15.916640+00:00",
+            "finish": null
+          },
+          "domain": "automation",
+          "item_id": "None",
+          "trigger": "state of input_boolean.input_boolean_force_navigate"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "2b5b049d2dc6212d7332a7dde14c6bbc",
+          "state": "running",
+          "script_execution": null,
+          "timestamp": {
+            "start": "2025-04-17T00:47:29.407892+00:00",
+            "finish": null
+          },
+          "domain": "automation",
+          "item_id": "None",
+          "trigger": "state of input_boolean.input_boolean_force_navigate",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-04-17T00:47:29.407924+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.navigate_after_selecting_date",
+                    "state": "on",
+                    "attributes": {
+                      "last_triggered": "2025-04-17T00:37:15.916884+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Navigate After Selecting Date"
+                    },
+                    "last_changed": "2025-04-17T00:28:32.606964+00:00",
+                    "last_reported": "2025-04-17T00:37:15.918800+00:00",
+                    "last_updated": "2025-04-17T00:37:15.918800+00:00",
+                    "context": {
+                      "id": "01JS0JVCGC5X821BKS00TC8Z73",
+                      "parent_id": "01JS0JVBBQ3JWFAMM2T2GTDGZ6",
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "input_boolean.input_boolean_force_navigate",
+                    "from_state": {
+                      "entity_id": "input_boolean.input_boolean_force_navigate",
+                      "state": "off",
+                      "attributes": {
+                        "editable": true,
+                        "friendly_name": "input_boolean.force_navigate"
+                      },
+                      "last_changed": "2025-04-17T00:37:16.930483+00:00",
+                      "last_reported": "2025-04-17T00:37:16.930483+00:00",
+                      "last_updated": "2025-04-17T00:37:16.930483+00:00",
+                      "context": {
+                        "id": "01JS0JVBBQ3JWFAMM2T2GTDGZ6",
+                        "parent_id": null,
+                        "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "input_boolean.input_boolean_force_navigate",
+                      "state": "on",
+                      "attributes": {
+                        "editable": true,
+                        "friendly_name": "input_boolean.force_navigate"
+                      },
+                      "last_changed": "2025-04-17T00:47:29.407530+00:00",
+                      "last_reported": "2025-04-17T00:47:29.407530+00:00",
+                      "last_updated": "2025-04-17T00:47:29.407530+00:00",
+                      "context": {
+                        "id": "01JS0KE2FNHN3E6C6VN6NXEVT6",
+                        "parent_id": null,
+                        "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of input_boolean.input_boolean_force_navigate"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-04-17T00:47:29.408015+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JS0KE3KZDQ87Q4XHNARBBYZF",
+                    "parent_id": "01JS0KE2FNHN3E6C6VN6NXEVT6",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "browser_mod",
+                    "service": "navigate",
+                    "service_data": {
+                      "path": "/smart-home-scheduler/day-view"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Navigate After Selecting Date",
+            "trigger": [
+              {
+                "platform": "state",
+                "entity_id": "input_boolean.input_boolean_force_navigate",
+                "to": "on"
+              }
+            ],
+            "action": [
+              {
+                "data": {
+                  "path": "/smart-home-scheduler/day-view"
+                },
+                "action": "browser_mod.navigate"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JS0KE3KZDQ87Q4XHNARBBYZF",
+            "parent_id": "01JS0KE2FNHN3E6C6VN6NXEVT6",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "2b5b049d2dc6212d7332a7dde14c6bbc",
+          "state": "running",
+          "script_execution": null,
+          "timestamp": {
+            "start": "2025-04-17T00:47:29.407892+00:00",
+            "finish": null
+          },
+          "domain": "automation",
+          "item_id": "None",
+          "trigger": "state of input_boolean.input_boolean_force_navigate"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "160c174a61ed28414175cb46676fc90f",
+          "state": "running",
+          "script_execution": null,
+          "timestamp": {
+            "start": "2025-04-17T01:10:16.129689+00:00",
+            "finish": null
+          },
+          "domain": "automation",
+          "item_id": "None",
+          "trigger": "state of input_boolean.input_boolean_force_navigate",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-04-17T01:10:16.129722+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.navigate_after_selecting_date",
+                    "state": "on",
+                    "attributes": {
+                      "last_triggered": "2025-04-17T00:47:29.407948+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Navigate After Selecting Date"
+                    },
+                    "last_changed": "2025-04-17T00:28:32.606964+00:00",
+                    "last_reported": "2025-04-17T00:47:29.409653+00:00",
+                    "last_updated": "2025-04-17T00:47:29.409653+00:00",
+                    "context": {
+                      "id": "01JS0KE3KZDQ87Q4XHNARBBYZF",
+                      "parent_id": "01JS0KE2FNHN3E6C6VN6NXEVT6",
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "input_boolean.input_boolean_force_navigate",
+                    "from_state": {
+                      "entity_id": "input_boolean.input_boolean_force_navigate",
+                      "state": "off",
+                      "attributes": {
+                        "editable": true,
+                        "friendly_name": "input_boolean.force_navigate"
+                      },
+                      "last_changed": "2025-04-17T00:47:30.410011+00:00",
+                      "last_reported": "2025-04-17T00:47:30.410011+00:00",
+                      "last_updated": "2025-04-17T00:47:30.410011+00:00",
+                      "context": {
+                        "id": "01JS0KE2FNHN3E6C6VN6NXEVT6",
+                        "parent_id": null,
+                        "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "input_boolean.input_boolean_force_navigate",
+                      "state": "on",
+                      "attributes": {
+                        "editable": true,
+                        "friendly_name": "input_boolean.force_navigate"
+                      },
+                      "last_changed": "2025-04-17T01:10:16.129336+00:00",
+                      "last_reported": "2025-04-17T01:10:16.129336+00:00",
+                      "last_updated": "2025-04-17T01:10:16.129336+00:00",
+                      "context": {
+                        "id": "01JS0MQS5RNP658CE380QPD0AH",
+                        "parent_id": null,
+                        "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of input_boolean.input_boolean_force_navigate"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-04-17T01:10:16.129816+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JS0MQTA126R6EPM2DJQK0YX9",
+                    "parent_id": "01JS0MQS5RNP658CE380QPD0AH",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "browser_mod",
+                    "service": "navigate",
+                    "service_data": {
+                      "path": "/smart-home-scheduler/day-view"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Navigate After Selecting Date",
+            "trigger": [
+              {
+                "platform": "state",
+                "entity_id": "input_boolean.input_boolean_force_navigate",
+                "to": "on"
+              }
+            ],
+            "action": [
+              {
+                "data": {
+                  "path": "/smart-home-scheduler/day-view"
+                },
+                "action": "browser_mod.navigate"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JS0MQTA126R6EPM2DJQK0YX9",
+            "parent_id": "01JS0MQS5RNP658CE380QPD0AH",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "160c174a61ed28414175cb46676fc90f",
+          "state": "running",
+          "script_execution": null,
+          "timestamp": {
+            "start": "2025-04-17T01:10:16.129689+00:00",
+            "finish": null
+          },
+          "domain": "automation",
+          "item_id": "None",
+          "trigger": "state of input_boolean.input_boolean_force_navigate"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "f30ada6127bea52b93f9579b9278a5e6",
+          "state": "running",
+          "script_execution": null,
+          "timestamp": {
+            "start": "2025-04-17T01:10:32.941406+00:00",
+            "finish": null
+          },
+          "domain": "automation",
+          "item_id": "None",
+          "trigger": "state of input_boolean.input_boolean_force_navigate",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-04-17T01:10:32.941452+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.navigate_after_selecting_date",
+                    "state": "on",
+                    "attributes": {
+                      "last_triggered": "2025-04-17T01:10:16.129746+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Navigate After Selecting Date"
+                    },
+                    "last_changed": "2025-04-17T00:28:32.606964+00:00",
+                    "last_reported": "2025-04-17T01:10:16.131325+00:00",
+                    "last_updated": "2025-04-17T01:10:16.131325+00:00",
+                    "context": {
+                      "id": "01JS0MQTA126R6EPM2DJQK0YX9",
+                      "parent_id": "01JS0MQS5RNP658CE380QPD0AH",
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "input_boolean.input_boolean_force_navigate",
+                    "from_state": {
+                      "entity_id": "input_boolean.input_boolean_force_navigate",
+                      "state": "off",
+                      "attributes": {
+                        "editable": true,
+                        "friendly_name": "input_boolean.force_navigate"
+                      },
+                      "last_changed": "2025-04-17T01:10:17.354388+00:00",
+                      "last_reported": "2025-04-17T01:10:17.354388+00:00",
+                      "last_updated": "2025-04-17T01:10:17.354388+00:00",
+                      "context": {
+                        "id": "01JS0MQS5RNP658CE380QPD0AH",
+                        "parent_id": null,
+                        "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "input_boolean.input_boolean_force_navigate",
+                      "state": "on",
+                      "attributes": {
+                        "editable": true,
+                        "friendly_name": "input_boolean.force_navigate"
+                      },
+                      "last_changed": "2025-04-17T01:10:32.941049+00:00",
+                      "last_reported": "2025-04-17T01:10:32.941049+00:00",
+                      "last_updated": "2025-04-17T01:10:32.941049+00:00",
+                      "context": {
+                        "id": "01JS0MR9K5N2VKH65XP0P0EJ1R",
+                        "parent_id": null,
+                        "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of input_boolean.input_boolean_force_navigate"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-04-17T01:10:32.941552+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JS0MRAQDAE2Y67MWJGVTQ4QN",
+                    "parent_id": "01JS0MR9K5N2VKH65XP0P0EJ1R",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "browser_mod",
+                    "service": "navigate",
+                    "service_data": {
+                      "path": "/smart-home-scheduler/day-view"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Navigate After Selecting Date",
+            "trigger": [
+              {
+                "platform": "state",
+                "entity_id": "input_boolean.input_boolean_force_navigate",
+                "to": "on"
+              }
+            ],
+            "action": [
+              {
+                "data": {
+                  "path": "/smart-home-scheduler/day-view"
+                },
+                "action": "browser_mod.navigate"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JS0MRAQDAE2Y67MWJGVTQ4QN",
+            "parent_id": "01JS0MR9K5N2VKH65XP0P0EJ1R",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "f30ada6127bea52b93f9579b9278a5e6",
+          "state": "running",
+          "script_execution": null,
+          "timestamp": {
+            "start": "2025-04-17T01:10:32.941406+00:00",
+            "finish": null
+          },
+          "domain": "automation",
+          "item_id": "None",
+          "trigger": "state of input_boolean.input_boolean_force_navigate"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "426d7af1a622a9366d099845009522a9",
+          "state": "running",
+          "script_execution": null,
+          "timestamp": {
+            "start": "2025-04-17T01:10:39.651429+00:00",
+            "finish": null
+          },
+          "domain": "automation",
+          "item_id": "None",
+          "trigger": "state of input_boolean.input_boolean_force_navigate",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-04-17T01:10:39.651461+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.navigate_after_selecting_date",
+                    "state": "on",
+                    "attributes": {
+                      "last_triggered": "2025-04-17T01:10:32.941476+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Navigate After Selecting Date"
+                    },
+                    "last_changed": "2025-04-17T00:28:32.606964+00:00",
+                    "last_reported": "2025-04-17T01:10:32.943857+00:00",
+                    "last_updated": "2025-04-17T01:10:32.943857+00:00",
+                    "context": {
+                      "id": "01JS0MRAQDAE2Y67MWJGVTQ4QN",
+                      "parent_id": "01JS0MR9K5N2VKH65XP0P0EJ1R",
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "input_boolean.input_boolean_force_navigate",
+                    "from_state": {
+                      "entity_id": "input_boolean.input_boolean_force_navigate",
+                      "state": "off",
+                      "attributes": {
+                        "editable": true,
+                        "friendly_name": "input_boolean.force_navigate"
+                      },
+                      "last_changed": "2025-04-17T01:10:33.958185+00:00",
+                      "last_reported": "2025-04-17T01:10:33.958185+00:00",
+                      "last_updated": "2025-04-17T01:10:33.958185+00:00",
+                      "context": {
+                        "id": "01JS0MR9K5N2VKH65XP0P0EJ1R",
+                        "parent_id": null,
+                        "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "input_boolean.input_boolean_force_navigate",
+                      "state": "on",
+                      "attributes": {
+                        "editable": true,
+                        "friendly_name": "input_boolean.force_navigate"
+                      },
+                      "last_changed": "2025-04-17T01:10:39.650445+00:00",
+                      "last_reported": "2025-04-17T01:10:39.650445+00:00",
+                      "last_updated": "2025-04-17T01:10:39.650445+00:00",
+                      "context": {
+                        "id": "01JS0MRG47AD4RHS1YW0PS6TFG",
+                        "parent_id": null,
+                        "user_id": "5a58e30c7a704c2e89b27b5d390afd8e"
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of input_boolean.input_boolean_force_navigate"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-04-17T01:10:39.651558+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JS0MRH93NZMFPXZK2EKQD66W",
+                    "parent_id": "01JS0MRG47AD4RHS1YW0PS6TFG",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "browser_mod",
+                    "service": "navigate",
+                    "service_data": {
+                      "path": "/smart-home-scheduler/day-view"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Navigate After Selecting Date",
+            "trigger": [
+              {
+                "platform": "state",
+                "entity_id": "input_boolean.input_boolean_force_navigate",
+                "to": "on"
+              }
+            ],
+            "action": [
+              {
+                "data": {
+                  "path": "/smart-home-scheduler/day-view"
+                },
+                "action": "browser_mod.navigate"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JS0MRH93NZMFPXZK2EKQD66W",
+            "parent_id": "01JS0MRG47AD4RHS1YW0PS6TFG",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "426d7af1a622a9366d099845009522a9",
+          "state": "running",
+          "script_execution": null,
+          "timestamp": {
+            "start": "2025-04-17T01:10:39.651429+00:00",
+            "finish": null
+          },
+          "domain": "automation",
+          "item_id": "None",
+          "trigger": "state of input_boolean.input_boolean_force_navigate"
+        }
+      }
+    ]
+  }
+}

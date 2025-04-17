@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_resources",
+  "data": {
+    "items": [
+      {
+        "id": "ee7847e98a5f425499d6af9c72dc4409",
+        "url": "/browser_mod.js?automatically-added&2.3.3",
+        "type": "module"
+      },
+      {
+        "id": "c758e7eecc1240bebdec3c6bfeda17b4",
+        "url": "/hacsfiles/lovelace-card-mod/card-mod.js?hacstag=190927524344",
+        "type": "module"
+      },
+      {
+        "id": "2add473b613647e3866cca797d417257",
+        "url": "/hacsfiles/lovelace-layout-card/layout-card.js?hacstag=156434866245",
+        "type": "module"
+      },
+      {
+        "id": "f2a26f8e87f849a1bce45b85c11d989e",
+        "url": "/local/button-card.js",
+        "type": "module"
+      }
+    ]
+  }
+}

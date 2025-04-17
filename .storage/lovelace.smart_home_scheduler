@@ -1,0 +1,439 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.smart_home_scheduler",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Home",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Calendar",
+                  "heading_style": "title",
+                  "icon": "mdi:calendar"
+                },
+                {
+                  "type": "custom:layout-card",
+                  "gridrows": 4,
+                  "gridcols": 7,
+                  "max_cols": 7,
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() - 1);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() - 1);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 6);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 6);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate());\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate());\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 7);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 7);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 1);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 1);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 8);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 8);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 2);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 2);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 9);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "perform-action",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 9);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        },
+                        "perform_action": "script.set_selected_date",
+                        "target": {}
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 3);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 3);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 10);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 10);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 4);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 4);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 11);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 11);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 5);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 5);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 12);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 12);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 13);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 13);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 14);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 14);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 15);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 15);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 16);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 16);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 17);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 17);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 18);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 18);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 19);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 19);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 20);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 20);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 21);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 21);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 22);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 22);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 23);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 23);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 24);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 24);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 25);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 25);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 26);\n  return d.toISOString().split('T')[0];\n]]]\n",
+                      "icon": "mdi:calendar",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.set_selected_date",
+                        "data": {
+                          "date": "[[[ \n  const d = new Date();\n  d.setDate(d.getDate() + 26);\n  return d.toISOString().split('T')[0];\n]]]\n"
+                        }
+                      }
+                    }
+                  ],
+                  "style": "ha-card {\n  width: 100%;\n  margin: 10px;\n  font-size: 20px;\n  padding: 5px;\n  color: blue;\n}\n .layout-card .layout-grid {\n      display: grid;\n      grid-template-columns: repeat(7, 1fr);  # Update this value to match the number of columns you want\n      grid-gap: 10px;\n    }\n",
+                  "layout_type": "masonry",
+                  "layout": {
+                    "width": 200,
+                    "max_cols": 7
+                  },
+                  "grid_options": {
+                    "columns": "full"
+                  }
+                }
+              ],
+              "column_span": 7
+            }
+          ]
+        },
+        {
+          "type": "sections",
+          "max_columns": 7,
+          "title": "Day View",
+          "path": "day-view",
+          "icon": "mdi:calendar-today",
+          "cards": [
+            {
+              "type": "entity",
+              "entity": "input_text.selected_schedule_date",
+              "name": "Selected Date"
+            }
+          ],
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "# 📅 {{ states('input_text.selected_schedule_date') }}\n"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "title": "Events for the Day",
+                  "content": "{% set events = states('input_text.schedule_data') | from_json %} {% if events | length > 0 %} **Today's Schedule:**   {% for event in events %} - {{ event.time }} — {{ event.name }}   {% endfor %} {% else %} _No events scheduled today._ {% endif %}\n"
+                },
+                {
+                  "type": "button",
+                  "name": "Edit Schedule",
+                  "icon": "mdi:pencil",
+                  "tap_action": {
+                    "action": "fire-dom-event",
+                    "browser_mod": {
+                      "service": "browser_mod.popup",
+                      "data": {
+                        "title": "Edit Schedule",
+                        "content": {
+                          "type": "markdown",
+                          "content": "## In Development\nThis feature is still being worked on.\n",
+                          "size": "wide",
+                          "style": "ha-card {\n  width: 200%;\n  margin: 10px;\n  font-size: 20px;\n  padding: 5px;\n  color: blue;\n}\n"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

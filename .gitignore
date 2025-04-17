@@ -1,2 +1,4 @@
 events.db
 .env
+__pycache__
+predicted_schedule.csv

@@ -151,15 +151,12 @@ while True:
         broker.connect(broker, port, keepalive)
         broker.loop_start()
 
-        """Unsure about this line"""
-        #broker.subscribe(sub_topic)
-
         #Keeps main thread active
         while True:
             time.sleep(1)
 
     except Exception as e:
-        print(f'Connection interrupted, retrying')
+        print(f'Connection on scheduler ML interrupted, retrying')
     
     finally:
         broker.loop_stop()

@@ -10,13 +10,13 @@ import paho.mqtt.client as mqtt
 import os
 import time
 
-genai.configure(api_key="INSERT KEY HERE")
+genai.configure(api_key="AIzaSyBXZkHQrw8gUi0gj-CcOvtpCqjgMVG6LKk")
 model = genai.GenerativeModel("gemini-2.0-flash-lite")
 
 #Broker attributes 
 sub_topic = 'zigbee2mqtt/device_id/temperature' #HASS Core -> ML Model
 pub_topic = 'scheduler/update'                  #ML Model -> Reasoning Agent
-broker = 'edgebeacon-EdgeBeacon'
+network = '192.168.0.101'
 port = 1883
 keepalive = 0
 
@@ -25,6 +25,9 @@ def define_schedule(file_name):
 
     # Load and preprocess the dataset
     df = pd.read_csv(file_name)
+    
+    print("CSV Columns:", df.columns)  # Debug which columns exist
+    
     df['datetime'] = pd.to_datetime(df['timestamp'], unit='s')
     df['hour'] = df['datetime'].dt.floor('H')
 
@@ -160,14 +163,14 @@ def publish_schedule(client):
     print('Initial schedule sent to reasoning agent')
 
 #Callback messages for broker
-def on_connect(client, data, flags, rc):
+def on_connect(client, data, flags, rc, properties=None):
     if rc == 0:
         print(f'Scheduler ML connected with result code {rc}')
         client.subscribe(sub_topic)
     else:
         print(f'Failed to connect, result code {rc}')
 
-def on_disconnect(client, data, rc):
+def on_disconnect(client, data, flags, rc, properties=None):
     print(f'Scheduler ML disconnected with result code {rc}')
 
 def on_message(client, data, message):
@@ -188,7 +191,7 @@ broker.on_message = on_message
 #Loop to ensure docker container does not exit early / constant reboot
 while True:
     try:
-        broker.connect(broker, port, keepalive)
+        broker.connect(network, port, keepalive)
         broker.loop_start()
 
         #Keeps main thread active
@@ -196,7 +199,7 @@ while True:
             time.sleep(1)
 
     except Exception as e:
-        print(f'Connection on scheduler ML interrupted, retrying')
+        print(f'Connection interrupted, retrying (Reason: {e}')
     
     finally:
         broker.loop_stop()
